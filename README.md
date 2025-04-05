@@ -1,44 +1,36 @@
-### This repository is no longer maintained!
+# SIT323 Task 5.1P - Dockerised Node.js Web Application
 
-**For the most up to date test app to get you started on Heroku, head on over to [`node-js-getting-started`](https://github.com/heroku/node-js-getting-started).**
+## 📦 Project Structure
 
+ node-js-sample
+ Dockerfile 
+ docker-compose.yml 
+ index.js 
+ package.json 
+ package-lock.json 
+ README.md
+
+ 
 ---
 
-# node-js-sample
+## 🚀 How to Run the Application
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+### 1. Clone the Repository
 
-## Running Locally
+```bash
+git clone https://github.com/alenantony/sit323-2025-prac5p.git
+cd sit323-2025-prac5p
 
-Make sure you have [Node.js](http://nodejs.org/) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
+Visit: http://localhost:3000
 
-```sh
-git clone git@github.com:heroku/node-js-sample.git # or clone your own fork
-cd node-js-sample
-npm install
-npm start
-```
+Hello from Dockerized Node.js App!
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
+Dockerfile Overview
 
-## Deploying to Heroku
-
-```
-heroku create
-git push heroku master
-heroku open
-```
-
-Alternatively, you can deploy your own copy of the app using the web-based flow:
-
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-## Documentation
-
-For more information about using Node.js on Heroku, see these Dev Center articles:
-
-- [10 Habits of a Happy Node Hacker](https://blog.heroku.com/archives/2014/3/11/node-habits)
-- [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
-- [Heroku Node.js Support](https://devcenter.heroku.com/articles/nodejs-support)
-- [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
-- [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
+FROM node:18
+WORKDIR /usr/src/app
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 3000
+CMD ["npm", "start"]
