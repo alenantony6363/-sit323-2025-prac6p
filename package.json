@@ -1,37 +1,15 @@
 {
-  "name": "js-sample",
-  "version": "0.2.0",
-  "description": "A sample Node.js app using Express 4",
+  "name": "sit323app",
+  "version": "1.0.0",
+  "description": "Kubernetes-deployable Node.js app for SIT323 Task 6.1P",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "sit323app": "file:"
   },
-  "engines": {
-    "node": "4.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/heroku/node-js-sample.git"
-  },
-  "keywords": [
-    "node",
-    "heroku",
-    "express"
-  ],
-  "author": "Mark Pundsack",
-  "contributors": [
-    {
-      "name": "Zeke Sikelianos",
-      "email": "zeke@sikelianos.com",
-      "url": "http://zeke.sikelianos.com"
-    }
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/heroku/node-js-sample/issues"
-  },
-  "homepage": "https://github.com/heroku/node-js-sample#readme"
+  "author": "Alen Antony",
+  "license": "MIT"
 }

@@ -1,36 +1,42 @@
-# SIT323 Task 5.1P - Dockerised Node.js Web Application
+# SIT323 Task 6.1P – Kubernetes Deployment of Node.js App
 
-## 📦 Project Structure
+# Application Overview
 
- node-js-sample
- Dockerfile 
- docker-compose.yml 
- index.js 
- package.json 
- package-lock.json 
- README.md
+This is a simple Express-based Node.js app previously built for Task 5.1P, now containerized and deployed to a Kubernetes cluster using:
 
- 
+- Docker
+- Kubernetes (`kubectl`)
+- Docker Hub
+
+ # Technologies Used
+
+- Node.js
+- Docker
+- Docker Hub
+- Kubernetes (local via Docker Desktop)
+- kubectl CLI
 ---
+# Project Structure
+Dockerfile 
+index.js 
+package.json 
+package-lock.json 
+deployment.yaml 
+service.yaml 
+README.md
 
-## 🚀 How to Run the Application
+## 🚀 How to Build and Deploy the App
 
-### 1. Clone the Repository
+### Step 1: Clone the Repo
 
-```bash
-git clone https://github.com/alenantony/sit323-2025-prac5p.git
-cd sit323-2025-prac5p
 
-Visit: http://localhost:3000
+# Step 2: Build Docker Image
+docker build -t alenantony/sit323app:latest .
+# Step 3: Push Image to Docker Hub
+docker push alenantony/sit323app:latest
+# step 4: Deploy to Kubernetes
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
 
-Hello from Dockerized Node.js App!
-
-Dockerfile Overview
-
-FROM node:18
-WORKDIR /usr/src/app
-COPY package*.json ./
-RUN npm install
-COPY . .
-EXPOSE 3000
-CMD ["npm", "start"]
+Once deployed, open your browser and go to:
+http://localhost:30080
